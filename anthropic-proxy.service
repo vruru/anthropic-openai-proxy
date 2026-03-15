@@ -1,0 +1,16 @@
+[Unit]
+Description=Anthropic-OpenAI Translation Proxy (Go)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/anthropic-proxy
+EnvironmentFile=/opt/anthropic-proxy/.env
+ExecStart=/opt/anthropic-proxy/anthropic-proxy
+Restart=always
+RestartSec=3
+StandardOutput=append:/opt/anthropic-proxy/proxy.log
+StandardError=append:/opt/anthropic-proxy/proxy.log
+
+[Install]
+WantedBy=multi-user.target

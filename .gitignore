@@ -1,0 +1,4 @@
+anthropic-proxy
+anthropic-proxy-linux
+.env
+*.log
